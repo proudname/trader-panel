@@ -1,14 +1,10 @@
 import {
     TopToolbar,
-    FilterButton,
     CreateButton,
-    ExportButton,
-    Button,
     List,
-    Title,
     Datagrid,
     TextField,
-    SimpleList, ListProps, EditButton
+    ListProps,
 } from 'react-admin';
 
 
@@ -18,12 +14,11 @@ const ListActions = () => (
     </TopToolbar>
 );
 
-export const SelectionItemList = (props: ListProps) => (
+export const StrategyList = (props: ListProps) => (
     <List actions={<ListActions/>} {...props}>
         <Datagrid rowClick={'edit'}>
             <TextField source="id" />
-            <TextField source="title" />
-            <EditButton label="Edit" resource={'selection-item'} />
+            <TextField source="name" />
         </Datagrid>
     </List>
 );
