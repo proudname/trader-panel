@@ -1,4 +1,4 @@
-import { AuthProvider, PreviousLocationStorageKey } from 'react-admin';
+import {AuthProvider, HttpError, PreviousLocationStorageKey} from 'react-admin';
 import {AxiosInstance} from "axios";
 import {traderBotApi} from "../clients/traderBotApi";
 
@@ -11,7 +11,6 @@ const buildAuthProvider = (
             login: username,
             password
         })
-        console.log(data.access_token);
         localStorage.setItem('access_token', data.access_token);
     },
     // called when the user clicks on the logout button

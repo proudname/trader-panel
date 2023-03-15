@@ -8,5 +8,6 @@ export const dataProvider = crudProvider('http://localhost:3000/api', async (url
         authenticated: !!token
     }
     options.headers = fetchUtils.createHeadersFromOptions(options);
-    return fetchUtils.fetchJson(url, options)
+    const result = await fetchUtils.fetchJson(url, options);
+    return result;
 });
